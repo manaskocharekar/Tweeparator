@@ -4,12 +4,11 @@ from tweepy import api
 
 __author__ = '@ManasKocharekar'
 
-
 #KEYS
-CUST_KEY = '7TfeHq5DOg5zidfSTbP15mL4L'
-CUST_SECRET = 'wkn03374J04tbgqoE8UemjfjfXJBKy4fQM8G8jFpuNd4nhrDKc'
-APP_KEY = '936617132963463168-0kTv9jK0kAxougV5rQlHIMJOos1zTLK'
-APP_SECRET = 'GaspSZqoO6sA9Q7W9YBYQIZDRSTFcOItcaZ8sdBWLk19r'
+CUST_KEY = 'CUST_KEY'
+CUST_SECRET = 'CUST_SECRET'
+APP_KEY = 'APP_TOKEN'
+APP_SECRET = 'APP_SECRET'
 auth = tweepy.OAuthHandler(CUST_KEY, CUST_SECRET)
 auth.set_access_token(APP_KEY, APP_SECRET)
 
