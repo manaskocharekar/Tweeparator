@@ -1,6 +1,8 @@
 import sys
 import tweepy
 from tweepy import api
+from nltk.tokenize import sent_tokenize
+
 
 __author__ = '@ManasKocharekar'
 
@@ -16,12 +18,9 @@ access = tweepy.API(auth)
 
 TweetThis = str(sys.argv[1])
 
-if TweetThis.startswith("#"):
-    TweetText = TweetThis[1:]
-else:
-    filename = open(TweetThis, 'r')
-    TweetText = filename.read()
-    filename.close()
+filename = open(TweetThis, 'r')
+TweetText = filename.read()
+filename.close()
 
 print(TweetText)
 
