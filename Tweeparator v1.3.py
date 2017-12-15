@@ -21,14 +21,16 @@ TweetThis = str(sys.argv[1])
 filename = open(TweetThis, 'r')
 TweetText = filename.read()
 filename.close()
+TweetsArray = sent_tokenize(TweetText)
+TotalTweets = len(TweetsArray)
 
-for i in sent_tokenize(TweetText):
+for i in TweetsArray:
     print(i)
+    if len(TweetText) <= 280:
+        access.update_status(TweetText)
+        print('Tweeted Successfully')
+    else:
+        print('Tweet Length Exceeded')
+        
     print()
-    print()
-##
-##if len(TweetText) <= 280:
-##    access.update_status(TweetText)
-##    print('Tweeted Successfully')
-##else:
-##    print('Tweet Length Exceeded')
+print("Tweeted", TotalTweets, "Tweets Successfully")
